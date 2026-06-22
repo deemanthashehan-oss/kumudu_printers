@@ -630,6 +630,108 @@
             font-size: 1.1rem;
         }
 
+        /* ----- TEAM SECTION ----- */
+        .team {
+            background: var(--cream);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .team-content h2 {
+            font-size: 2.6rem;
+            margin-bottom: 16px;
+        }
+
+        .team-content h2 span {
+            color: var(--primary);
+        }
+
+        .team-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .team-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .team-content ul li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .team-content ul li i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .team-image img {
+            border-radius: var(--radius);
+            width: 100%;
+            height: auto;
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            min-height: 250px;
+        }
+
+        /* ===== NEW: TARGET AUDIENCES SECTION ===== */
+        .audience {
+            background: var(--white);
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .audience-card {
+            background: var(--cream);
+            padding: 32px 24px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(26, 90, 140, 0.06);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+        }
+
+        .audience-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+
+        .audience-card .icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .audience-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .audience-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
         /* ----- SERVICES ----- */
         .services {
             background: var(--cream);
@@ -759,6 +861,8 @@
         .gallery-item-7 { background-image: url('https://images.unsplash.com/photo-1562569633-622303b6d820?w=400&h=400&fit=crop&crop=center'); }
         .gallery-item-8 { background-image: url('https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=400&h=400&fit=crop&crop=center'); }
         .gallery-item-9 { background-image: url('https://images.unsplash.com/photo-1586788224331-947f68671cf1?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-10 { background-image: url('https://images.unsplash.com/photo-1593079838858-4ed29d5d9b1c?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-11 { background-image: url('https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400&h=400&fit=crop&crop=center'); }
 
         /* ----- TESTIMONIALS (SAFE & LEGAL) ----- */
         .testimonials {
@@ -1010,6 +1114,19 @@
                 justify-items: center;
             }
 
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .team-content {
+                text-align: center;
+            }
+
+            .team-content ul {
+                justify-content: center;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1165,6 +1282,8 @@
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="active">About</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#audience">Who We Serve</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Portfolio</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
@@ -1191,8 +1310,8 @@
                     </h1>
                     <p class="hero-tagline">Kumudu Art Printers – Where Quality Meets Legacy</p>
                     <p class="hero-desc">
-                        From booklets and wedding cards to posters and binding, we deliver
-                        professional offset printing with a personal touch. Backed by 35+ years of
+                        From booklets and wedding cards to posters, leaflets, and custom printing,
+                        we deliver professional offset printing with a personal touch. Backed by 35+ years of
                         proven excellence.
                     </p>
                     <div class="hero-btns">
@@ -1234,12 +1353,11 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT with REAL OFFSET PRESS IMAGE ===== -->
+    <!-- ===== ABOUT ===== -->
     <section class="about section-padding" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <!-- ✅ REAL OFFSET PRINTING PRESS - NO COMPUTER SCREEN -->
                     <img src="https://images.unsplash.com/photo-1599305445671-ac291c95e3c8?w=600&h=400&fit=crop&crop=center" alt="Kumudu Art Printers - Offset Printing Press" />
                     <div class="exp-badge">
                         <strong>35+</strong>
@@ -1257,9 +1375,9 @@
                         reliability, and artistry that stands the test of time.
                     </p>
                     <p>
-                        From intricately designed wedding invitations to large-format posters and
-                        perfectly bound books, every project carries the signature of our 35+ year
-                        legacy. We don't just print — we bring stories to life.
+                        From intricately designed wedding invitations to large-format posters,
+                        leaflets, business promotion materials, and perfectly bound books —
+                        every project carries the signature of our 35+ year legacy.
                     </p>
                     <div class="about-features">
                         <div class="about-feature"><i class="fas fa-check-circle"></i> 35+ Years Proven Quality</div>
@@ -1268,6 +1386,70 @@
                         <div class="about-feature"><i class="fas fa-check-circle"></i> 100% Client Satisfaction</div>
                     </div>
                     <div class="signature">— Mr. Kumudulal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM SECTION ===== -->
+    <section class="team section-padding" id="team">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-content">
+                    <h2>Our <span>Experienced</span> Team</h2>
+                    <div class="divider" style="margin: 16px 0 24px 0; width: 80px;"></div>
+                    <p>
+                        Behind every exceptional print is a team of skilled professionals. At <strong>Kumudu Art Printers</strong>, 
+                        we are proud to have a <strong>well‑experienced staff</strong> who bring decades of hands‑on expertise 
+                        in offset printing, binding, and finishing.
+                    </p>
+                    <p>
+                        Our craftsmen and technicians work with precision and care, ensuring that every project — 
+                        from a simple visiting card to a complex wedding invitation — meets the highest standards.
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-user-check"></i> Expert offset press operators</li>
+                        <li><i class="fas fa-palette"></i> Skilled graphic designers</li>
+                        <li><i class="fas fa-book"></i> Master bookbinders</li>
+                        <li><i class="fas fa-hand-sparkles"></i> Quality control specialists</li>
+                    </ul>
+                </div>
+                <div class="team-image">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop&crop=center" alt="Kumudu Art Printers - Experienced Staff" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEW: TARGET AUDIENCES ===== -->
+    <section class="audience section-padding" id="audience">
+        <div class="container">
+            <h2 class="section-title">Who We <span>Serve</span></h2>
+            <div class="divider"></div>
+            <p class="section-subtitle">
+                We understand the unique printing needs of different industries. Here's who we work with:
+            </p>
+
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Tuition Masters</h3>
+                    <p>High-quality booklets, handouts, worksheets, and exam papers for tuition classes and educational institutes.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Book Publishers</h3>
+                    <p>Professional offset printing and binding for novels, textbooks, academic journals, and publication projects.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Business Promotion</h3>
+                    <p>Eye-catching leaflets, flyers, and promotional materials to help your business stand out and reach new customers.</p>
+                </div>
+                <div class="audience-card">
+                    <div class="icon"><i class="fas fa-compact-disc"></i></div>
+                    <h3>CD Cover Printing</h3>
+                    <p>Custom CD and DVD covers, inserts, and packaging for musicians, software developers, and media professionals.</p>
                 </div>
             </div>
         </div>
@@ -1305,8 +1487,20 @@
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-leaf"></i></div>
-                    <h3>Leaflets</h3>
-                    <p>Eye-catching leaflets and flyers for promotions and events.</p>
+                    <h3>Leaflets &amp; Flyers</h3>
+                    <p>Eye-catching promotional leaflets, flyers, and handbills for events and businesses.</p>
+                </div>
+                <!-- NEW: Leaflets for Your New Business -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Leaflets for New Business</h3>
+                    <p>Launch your business with attention-grabbing leaflets and promotional materials designed to attract your first customers.</p>
+                </div>
+                <!-- NEW: Lunch Box Printing -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Lunch Box Printing</h3>
+                    <p>Custom printed lunch boxes and food packaging for schools, cafes, and catering businesses.</p>
                 </div>
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-book-open"></i></div>
@@ -1333,11 +1527,17 @@
                     <h3>Invoice Books</h3>
                     <p>Professional invoice books and receipt pads for businesses.</p>
                 </div>
+                <!-- NEW: CD Cover -->
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-compact-disc"></i></div>
+                    <h3>CD Cover Printing</h3>
+                    <p>Custom CD and DVD covers, inserts, and labels for your media projects.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== GALLERY with IMAGES ===== -->
+    <!-- ===== GALLERY ===== -->
     <section class="gallery section-padding" id="gallery">
         <div class="container">
             <h2 class="section-title">Our <span>Portfolio</span></h2>
@@ -1362,7 +1562,7 @@
                 <div class="gallery-item gallery-item-3">
                     <div class="overlay">
                         <h4>Wedding Cards</h4>
-                        <p>Elegant invitations with ring</p>
+                        <p>Elegant invitations</p>
                     </div>
                 </div>
                 <div class="gallery-item gallery-item-4">
@@ -1401,11 +1601,23 @@
                         <p>Business forms</p>
                     </div>
                 </div>
+                <div class="gallery-item gallery-item-10">
+                    <div class="overlay">
+                        <h4>CD Covers</h4>
+                        <p>Custom media packaging</p>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-11">
+                    <div class="overlay">
+                        <h4>Lunch Boxes</h4>
+                        <p>Custom food packaging</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS (SAFE & LEGAL) ===== -->
+    <!-- ===== TESTIMONIALS ===== -->
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
             <h2 class="section-title">Client <span>Reviews</span></h2>
@@ -1524,7 +1736,7 @@
             </div>
 
             <p style="font-size:0.75rem; margin-top:12px;">
-                <i class="fas fa-print"></i> Offset Printing &bull; Booklets &bull; Visiting Cards &bull; Wedding Cards &bull; Leaflets &bull; Posters &bull; File Covers &bull; Certificates &bull; Invoice Books &bull; Book Binding
+                <i class="fas fa-print"></i> Offset Printing &bull; Booklets &bull; Visiting Cards &bull; Wedding Cards &bull; Leaflets &bull; Posters &bull; File Covers &bull; Certificates &bull; Invoice Books &bull; Book Binding &bull; CD Covers &bull; Lunch Box Printing
             </p>
         </div>
     </footer>
@@ -1676,7 +1888,7 @@
         });
 
         // ----- Smooth reveal on scroll -----
-        const cards = document.querySelectorAll('.service-card, .gallery-item, .testimonial-card, .about-grid, .hero-card');
+        const cards = document.querySelectorAll('.service-card, .gallery-item, .testimonial-card, .about-grid, .team-grid, .audience-card, .hero-card');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
@@ -1701,7 +1913,7 @@
             observer.observe(stat);
         });
 
-        console.log('✅ Kumudu Art Printers — Computer screen image removed. Real offset press added.');
+        console.log('✅ Kumudu Art Printers — Target audiences & new services added.');
         console.log('📘 Facebook: https://www.facebook.com/share/1D8xuDBgaj/?mibextid=wwXIfr');
         console.log('⭐ Google Review Link: https://share.google/wwCN1nMMxUWtOVj0t');
     </script>
