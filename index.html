@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <style>
-        /* ----- RESET & BASE ----- */
         *,
         *::before,
         *::after {
@@ -758,24 +757,27 @@
             margin-top: 2px;
         }
 
-        /* ----- TESTIMONIALS ----- */
+        /* ----- TESTIMONIALS (SAFE & LEGAL - No fake reviews) ----- */
         .testimonials {
             background: var(--cream);
         }
 
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .testimonial-card {
             background: var(--white);
-            padding: 32px 28px;
+            padding: 40px 30px;
             border-radius: var(--radius);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
             border: 1px solid rgba(26, 90, 140, 0.06);
             transition: var(--transition);
+            text-align: center;
         }
 
         .testimonial-card:hover {
@@ -785,23 +787,24 @@
 
         .testimonial-card .stars {
             color: #f5b342;
-            margin-bottom: 12px;
-            font-size: 1rem;
-            letter-spacing: 2px;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
         }
 
         .testimonial-card p {
-            font-style: italic;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 20px 0 10px 0;
             color: var(--dark);
-            font-size: 0.98rem;
-            line-height: 1.7;
         }
 
-        .testimonial-card .client {
-            margin-top: 16px;
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 0.92rem;
+        .testimonial-card .sub-text {
+            color: var(--gray);
+            margin-bottom: 24px;
+            font-size: 1rem;
+            font-weight: 400;
+            font-style: normal;
         }
 
         /* ----- CONTACT ----- */
@@ -1157,7 +1160,7 @@
                 <li><a href="#about" class="active">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
             </ul>
 
@@ -1301,7 +1304,6 @@
                     <h3>Leaflets</h3>
                     <p>Eye-catching leaflets and flyers for promotions and events.</p>
                 </div>
-                <!-- Removed Die Cutting & Hard Binding, Added Book Binding -->
                 <div class="service-card">
                     <div class="icon"><i class="fas fa-book-open"></i></div>
                     <h3>Book Binding</h3>
@@ -1361,7 +1363,6 @@
                     <h4>Leaflets</h4>
                     <p>Promotional flyers</p>
                 </div>
-                <!-- Removed Die Cutting & Hard Binding, Added Book Binding -->
                 <div class="gallery-item">
                     <i class="fas fa-book-open"></i>
                     <h4>Book Binding</h4>
@@ -1391,30 +1392,33 @@
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS ===== -->
+    <!-- ===== TESTIMONIALS (YOUR EXACT GOOGLE REVIEW LINK) ===== -->
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our <span>Clients Say</span></h2>
+            <h2 class="section-title">Client <span>Reviews</span></h2>
             <div class="divider"></div>
             <p class="section-subtitle">
-                Real words from the people who have trusted us with their printing needs.
+                We value honest feedback! Your reviews help us maintain our 35+ year legacy of quality.
             </p>
 
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“Kumudu Art Printers delivered our wedding cards with exceptional quality. The attention to detail was remarkable. Mr. Kumudulal personally ensured everything was perfect.”</p>
-                    <div class="client">— Priyanka &amp; Nimal</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“We've been working with Kumudu Art Printers for over 10 years. Their book printing and binding are consistently top-notch. A true partner in our publishing journey.”</p>
-                    <div class="client">— Sarasavi Publishers</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>“From posters to invoice books, every product reflects the 35+ years of expertise behind this brand. Highly recommended for anyone who values quality.”</p>
-                    <div class="client">— EventWorks Ltd.</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Share Your Experience with Us</p>
+                    <p class="sub-text">
+                        Have you worked with Kumudu Art Printers? Your genuine feedback helps us improve 
+                        and assists other customers in making informed decisions.
+                    </p>
+                    <!-- === UPDATED: Your exact link === -->
+                    <a href="https://share.google/wwCN1nMMxUWtOVj0t" target="_blank" rel="noopener noreferrer" class="btn btn-social btn-google" style="display: inline-flex;">
+                        <i class="fab fa-google"></i> Write a Review on Google
+                    </a>
                 </div>
             </div>
         </div>
@@ -1448,7 +1452,6 @@
                         <i class="fas fa-envelope"></i>
                         <div><span class="label">Email</span><br /><span class="value">pkmudu64@gmail.com</span></div>
                     </div>
-                    <!-- Updated Working Hours -->
                     <div class="contact-detail">
                         <i class="fas fa-clock"></i>
                         <div>
@@ -1460,7 +1463,7 @@
                         </div>
                     </div>
 
-                    <!-- Social Media Buttons: Facebook, WhatsApp, Google Review -->
+                    <!-- Social Media Buttons -->
                     <div class="contact-social">
                         <a href="https://www.facebook.com/share/1D8xuDBgaj/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="btn btn-social btn-facebook">
                             <i class="fab fa-facebook-f"></i> Facebook
@@ -1468,7 +1471,8 @@
                         <a href="https://wa.me/94777592828?text=Hi%20Kumudu%20Art%20Printers%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20printing." target="_blank" class="btn btn-social btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                        <a href="https://g.page/r/CVPi2bTCf2hQEAE/review" target="_blank" rel="noopener noreferrer" class="btn btn-social btn-google">
+                        <!-- === UPDATED: Your exact link === -->
+                        <a href="https://share.google/wwCN1nMMxUWtOVj0t" target="_blank" rel="noopener noreferrer" class="btn btn-social btn-google">
                             <i class="fab fa-google"></i> Write a Review
                         </a>
                     </div>
@@ -1496,7 +1500,6 @@
                 Crafted with <i class="fas fa-heart" style="color:var(--primary-light);"></i> by Mr. Kumudulal
             </p>
 
-            <!-- Footer Social Icons -->
             <div class="footer-social">
                 <a href="https://www.facebook.com/share/1D8xuDBgaj/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <i class="fab fa-facebook-f"></i>
@@ -1504,12 +1507,12 @@
                 <a href="https://wa.me/94777592828" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://g.page/r/CVPi2bTCf2hQEAE/review" target="_blank" rel="noopener noreferrer" aria-label="Google Review">
+                <!-- === UPDATED: Your exact link === -->
+                <a href="https://share.google/wwCN1nMMxUWtOVj0t" target="_blank" rel="noopener noreferrer" aria-label="Google Review">
                     <i class="fab fa-google"></i>
                 </a>
             </div>
 
-            <!-- Updated Footer Services List -->
             <p style="font-size:0.75rem; margin-top:12px;">
                 <i class="fas fa-print"></i> Offset Printing &bull; Booklets &bull; Visiting Cards &bull; Wedding Cards &bull; Leaflets &bull; Posters &bull; File Covers &bull; Certificates &bull; Invoice Books &bull; Book Binding
             </p>
@@ -1688,10 +1691,9 @@
             observer.observe(stat);
         });
 
-        console.log('🎨 Kumudu Art Printers — 35+ Years of Offset Printing Excellence');
-        console.log('📱 Contact form sends messages to +94 77 759 2828 via WhatsApp');
+        console.log('✅ Kumudu Art Printers — Website updated with your exact Google review link.');
         console.log('📘 Facebook: https://www.facebook.com/share/1D8xuDBgaj/?mibextid=wwXIfr');
-        console.log('⭐ Google Review: https://g.page/r/CVPi2bTCf2hQEAE/review');
+        console.log('⭐ Google Review Link: https://share.google/wwCN1nMMxUWtOVj0t');
     </script>
 
 </body>
