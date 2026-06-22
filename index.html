@@ -545,30 +545,13 @@
             position: relative;
         }
 
-        .about-image .img-placeholder {
-            background: var(--light-blue);
+        .about-image img {
             border-radius: var(--radius);
-            padding: 60px 40px;
-            text-align: center;
-            min-height: 380px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed rgba(26, 90, 140, 0.2);
-            color: var(--primary);
-        }
-
-        .about-image .img-placeholder i {
-            font-size: 4.5rem;
-            margin-bottom: 16px;
-            opacity: 0.6;
-        }
-
-        .about-image .img-placeholder p {
-            font-size: 1rem;
-            color: var(--gray);
-            font-weight: 400;
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+            object-fit: cover;
+            box-shadow: var(--shadow);
         }
 
         .about-image .exp-badge {
@@ -707,57 +690,77 @@
             line-height: 1.5;
         }
 
-        /* ----- GALLERY ----- */
+        /* ----- GALLERY with IMAGES ----- */
         .gallery {
             background: var(--white);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
         }
 
         .gallery-item {
-            background: var(--light-gray);
+            position: relative;
             border-radius: var(--radius);
-            padding: 32px 12px;
-            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: var(--transition);
-            border: 1px solid rgba(26, 90, 140, 0.06);
-            min-height: 150px;
+            background: var(--light-gray);
+            aspect-ratio: 1 / 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            min-height: 200px;
         }
 
         .gallery-item:hover {
             transform: translateY(-6px);
-            box-shadow: var(--shadow);
-            border-color: var(--primary-light);
+            box-shadow: var(--shadow-hover);
         }
 
-        .gallery-item i {
-            font-size: 2.4rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            opacity: 0.7;
+        .gallery-item .overlay {
+            background: rgba(0,0,0,0.6);
+            padding: 16px 20px;
+            border-radius: 8px;
+            width: 100%;
+            backdrop-filter: blur(4px);
         }
 
         .gallery-item h4 {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+            color: #fff;
         }
 
         .gallery-item p {
-            font-size: 0.75rem;
-            color: var(--gray);
-            margin-top: 2px;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            color: #eee;
+            margin: 0;
         }
 
-        /* ----- TESTIMONIALS (SAFE & LEGAL - No fake reviews) ----- */
+        /* Individual gallery images (background) */
+        .gallery-item-1 { background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-2 { background-image: url('https://images.unsplash.com/photo-1586880244406-0d8ad6e1f8e0?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-3 { background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-4 { background-image: url('https://images.unsplash.com/photo-1586074296757-0cb3be2b8bc6?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-5 { background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-6 { background-image: url('https://images.unsplash.com/photo-1586639375491-6c1a6bf72244?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-7 { background-image: url('https://images.unsplash.com/photo-1562569633-622303b6d820?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-8 { background-image: url('https://images.unsplash.com/photo-1514326640560-7d063ef2aed5?w=400&h=400&fit=crop&crop=center'); }
+        .gallery-item-9 { background-image: url('https://images.unsplash.com/photo-1586788224331-947f68671cf1?w=400&h=400&fit=crop&crop=center'); }
+
+        /* ----- TESTIMONIALS (SAFE & LEGAL) ----- */
         .testimonials {
             background: var(--cream);
         }
@@ -1015,6 +1018,10 @@
             .section-title {
                 font-size: 2.2rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -1227,16 +1234,13 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ABOUT with REAL OFFSET PRESS IMAGE ===== -->
     <section class="about section-padding" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image">
-                    <div class="img-placeholder">
-                        <i class="fas fa-print"></i>
-                        <p style="font-weight:500; color:var(--dark);">Kumudu Art Printers</p>
-                        <p style="font-size:0.85rem;">Offset Printing Excellence Since 1989</p>
-                    </div>
+                    <!-- ✅ REAL OFFSET PRINTING PRESS - NO COMPUTER SCREEN -->
+                    <img src="https://images.unsplash.com/photo-1599305445671-ac291c95e3c8?w=600&h=400&fit=crop&crop=center" alt="Kumudu Art Printers - Offset Printing Press" />
                     <div class="exp-badge">
                         <strong>35+</strong>
                         <span>Years of Trust</span>
@@ -1333,66 +1337,75 @@
         </div>
     </section>
 
-    <!-- ===== GALLERY ===== -->
+    <!-- ===== GALLERY with IMAGES ===== -->
     <section class="gallery section-padding" id="gallery">
         <div class="container">
             <h2 class="section-title">Our <span>Portfolio</span></h2>
             <div class="divider"></div>
             <p class="section-subtitle">
-                A glimpse into the quality and craftsmanship we deliver every day.
+                A visual showcase of the quality and craftsmanship we deliver every day.
             </p>
 
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <i class="fas fa-book"></i>
-                    <h4>Booklets</h4>
-                    <p>Educational &amp; corporate</p>
+                <div class="gallery-item gallery-item-1">
+                    <div class="overlay">
+                        <h4>Booklets</h4>
+                        <p>Educational &amp; corporate</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-id-card"></i>
-                    <h4>Visiting Cards</h4>
-                    <p>Premium business cards</p>
+                <div class="gallery-item gallery-item-2">
+                    <div class="overlay">
+                        <h4>Visiting Cards</h4>
+                        <p>Premium business cards</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-ring"></i>
-                    <h4>Wedding Cards</h4>
-                    <p>Elegant invitations</p>
+                <div class="gallery-item gallery-item-3">
+                    <div class="overlay">
+                        <h4>Wedding Cards</h4>
+                        <p>Elegant invitations with ring</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-leaf"></i>
-                    <h4>Leaflets</h4>
-                    <p>Promotional flyers</p>
+                <div class="gallery-item gallery-item-4">
+                    <div class="overlay">
+                        <h4>Leaflets</h4>
+                        <p>Promotional flyers</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-book-open"></i>
-                    <h4>Book Binding</h4>
-                    <p>Perfect binding &amp; finishing</p>
+                <div class="gallery-item gallery-item-5">
+                    <div class="overlay">
+                        <h4>Book Binding</h4>
+                        <p>Perfect binding &amp; finishing</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-flag"></i>
-                    <h4>Posters</h4>
-                    <p>Vibrant displays</p>
+                <div class="gallery-item gallery-item-6">
+                    <div class="overlay">
+                        <h4>Posters</h4>
+                        <p>Vibrant displays</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-folder"></i>
-                    <h4>File Covers</h4>
-                    <p>Custom folders</p>
+                <div class="gallery-item gallery-item-7">
+                    <div class="overlay">
+                        <h4>File Covers</h4>
+                        <p>Custom folders</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-award"></i>
-                    <h4>Certificates</h4>
-                    <p>Recognition prints</p>
+                <div class="gallery-item gallery-item-8">
+                    <div class="overlay">
+                        <h4>Certificates</h4>
+                        <p>Recognition prints</p>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <i class="fas fa-receipt"></i>
-                    <h4>Invoice Books</h4>
-                    <p>Business forms</p>
+                <div class="gallery-item gallery-item-9">
+                    <div class="overlay">
+                        <h4>Invoice Books</h4>
+                        <p>Business forms</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== TESTIMONIALS (YOUR EXACT GOOGLE REVIEW LINK) ===== -->
+    <!-- ===== TESTIMONIALS (SAFE & LEGAL) ===== -->
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
             <h2 class="section-title">Client <span>Reviews</span></h2>
@@ -1415,7 +1428,6 @@
                         Have you worked with Kumudu Art Printers? Your genuine feedback helps us improve 
                         and assists other customers in making informed decisions.
                     </p>
-                    <!-- === UPDATED: Your exact link === -->
                     <a href="https://share.google/wwCN1nMMxUWtOVj0t" target="_blank" rel="noopener noreferrer" class="btn btn-social btn-google" style="display: inline-flex;">
                         <i class="fab fa-google"></i> Write a Review on Google
                     </a>
@@ -1471,7 +1483,6 @@
                         <a href="https://wa.me/94777592828?text=Hi%20Kumudu%20Art%20Printers%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20printing." target="_blank" class="btn btn-social btn-whatsapp">
                             <i class="fab fa-whatsapp"></i> WhatsApp
                         </a>
-                        <!-- === UPDATED: Your exact link === -->
                         <a href="https://share.google/wwCN1nMMxUWtOVj0t" target="_blank" rel="noopener noreferrer" class="btn btn-social btn-google">
                             <i class="fab fa-google"></i> Write a Review
                         </a>
@@ -1507,7 +1518,6 @@
                 <a href="https://wa.me/94777592828" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <!-- === UPDATED: Your exact link === -->
                 <a href="https://share.google/wwCN1nMMxUWtOVj0t" target="_blank" rel="noopener noreferrer" aria-label="Google Review">
                     <i class="fab fa-google"></i>
                 </a>
@@ -1691,7 +1701,7 @@
             observer.observe(stat);
         });
 
-        console.log('✅ Kumudu Art Printers — Website updated with your exact Google review link.');
+        console.log('✅ Kumudu Art Printers — Computer screen image removed. Real offset press added.');
         console.log('📘 Facebook: https://www.facebook.com/share/1D8xuDBgaj/?mibextid=wwXIfr');
         console.log('⭐ Google Review Link: https://share.google/wwCN1nMMxUWtOVj0t');
     </script>
